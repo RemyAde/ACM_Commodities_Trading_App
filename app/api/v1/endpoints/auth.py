@@ -28,7 +28,7 @@ class LoginRequest(BaseModel):
 @router.post("/login")
 async def login_user(form: LoginRequest, response: Response):
     token = await token_generator(form.email, form.password)
-    response.set_cookie(key="access_token", value=token, httponly=True, secure=True)
+    response.set_cookie(key="access_token", value=token, httponly=True, secure=True, domain="https://acm-c.vercel.app")
     return {
         "status": "ok",
         "msg": "login successful"
