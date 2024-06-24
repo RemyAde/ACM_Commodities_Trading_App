@@ -21,7 +21,7 @@ origins = [
     "http://localhost",
     "http://localhost:5173",
     "localhost:5173",
-    "https://acm-c.vercel.app/"]
+    "https://acm-c.vercel.app"]
 
 # Middleware
 app.add_middleware(
