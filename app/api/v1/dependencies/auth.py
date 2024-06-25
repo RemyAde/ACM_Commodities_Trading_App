@@ -58,12 +58,12 @@ async def token_generator(email: str, password: str):
             )
         )
     
-    expiry_delta = datetime.now(UTC) + timedelta(hours=36)
+    # expiry_delta = datetime.now(UTC) + timedelta(hours=36)
     token_data = {
         "id": user.id,
         "email": user.email,
         "user_type": user_type,
-        "exp":str(expiry_delta)
+        # "exp":str(expiry_delta)
     }
 
     token = jwt.encode(token_data, settings.SECRET_KEY, algorithm = settings.ALGORITM)
