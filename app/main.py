@@ -17,16 +17,10 @@ logging.basicConfig(
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
-origins = [
-    "http://localhost",
-    "http://localhost:5173",
-    "localhost:5173",
-    "https://acm-c.vercel.app"]
-
 # Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
